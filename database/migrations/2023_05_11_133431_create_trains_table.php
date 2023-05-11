@@ -22,9 +22,9 @@ return new class extends Migration
             $table->time('departure_time');
             $table->time('arrival_time');
             $table->string('train_code', 10);
-            $table->unsignedTinyInteger('carriages_number');
-            $table->boolean('is_on_time');
-            $table->boolean('is_cancelled');
+            $table->unsignedTinyInteger('carriages_number')->nullable();
+            $table->boolean('is_on_time')->nullable()->default(true);
+            $table->boolean('is_cancelled')->nullable()->default(false);
 
             $table->timestamps();
         });
