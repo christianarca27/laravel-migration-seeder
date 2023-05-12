@@ -13,7 +13,9 @@ class PageController extends Controller
     {
         $dateTime = new DateTime();
 
-        $trains = Train::where('departure_time', '>=', $dateTime->format('Y-m-d H:i:s'))->get();
+        $trains = Train::all();
+
+        // $trains = Train::where('departure_time', '>=', $dateTime->format('Y-m-d H:i:s'))->get();
 
         return view('index', compact('trains'));
     }
